@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+* @category    Invent
+* @package     Invent_Maxorderamount
+* @copyright   Copyright (c) 2013 InventCommerce Pty Ltd. (http://www.inventcommerce.com/)
+
+* Invent_Maxorderamount System Configuration setup
+*
+* @category    Invent
+* @package     Invent_Maxorderamount
+* @author      Invent Commerce <invent@inventcommerce.com>
+*/
+-->
+<config>
+    <sections>
+        <invent_maxorderamount translate="label" module="invent_maxorderamount">
+            <label>Maximum Order Amount</label>
+            <sort_order>100</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <tab>invent</tab>
+            <groups>
+                <general>
+                    <label>Maximum Order Amount</label>
+                    <sort_order>51</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <active translate="label">
+                            <label>Enable</label>
+                            <sort_order>5</sort_order>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </active>
+                        <maximum_amount>
+                            <label>Single Order Maximum Amount</label>
+                            <comment><![CDATA[No single order can be placed over X amount, where X is an integer value.]]></comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </maximum_amount>
+                        <message>
+                            <label>Message displayed to customer.</label>
+                            <comment><![CDATA[Message to be displayed to customer when the limit condition is triggered.]]></comment>
+                            <tooltip><![CDATA[Please use "%s" to position the amount value within the message string.]]></tooltip>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </message>
+                    </fields>
+                </general>
+            </groups>
+        </invent_maxorderamount>
+    </sections>
+</config>

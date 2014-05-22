@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!--
+NOTICE OF LICENSE
+
+This source file is subject to the Open Software License (OSL 3.0)
+that is bundled with this package in the file LICENSE.txt.
+It is also available through the world-wide-web at this URL:
+http://opensource.org/licenses/osl-3.0.php
+If you did not receive a copy of the license and are unable to
+obtain it through the world-wide-web, please send an email
+to license@magentocommerce.com so we can send you a copy immediately.
+
+Invent_General System Configuration file
+
+@category    Invent
+@package     Invent_General
+@author      Invent Commerce <invent@inventcommerce.com>
+@copyright   Copyright (c) 2013 InventCommerce Pty Ltd. (http://www.inventcommerce.com/)
+@license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+
+-->
+<config>
+    <tabs>
+        <invent translate="label" module="invent_general">
+            <label>InventCommerce</label>
+            <sort_order>500</sort_order>
+        </invent>
+    </tabs>
+    <sections>
+        <invent_general translate="label" module="invent_general">
+            <label>General Information</label>
+            <sort_order>100</sort_order>
+            <tab>invent</tab>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <general translate="label">
+                    <label>Contact Support</label>
+                    <expanded>1</expanded>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>300</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                </general>
+            </groups>
+        </invent_general>
+    </sections>
+</config>

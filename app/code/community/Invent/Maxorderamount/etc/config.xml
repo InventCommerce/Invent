@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+* @category    Invent
+* @package     Invent_Maxorderamount
+* @copyright   Copyright (c) 2013 InventCommerce Pty Ltd. (http://www.inventcommerce.com/)
+
+* Invent_Maxorderamount Configuration XML
+*
+* @category    Invent
+* @package     Invent_Maxorderamount
+* @author      Invent Commerce <invent@inventcommerce.com>
+*/
+-->
+
+<config>
+    <modules>
+        <Invent_Maxorderamount>
+            <version>0.1.0</version>
+        </Invent_Maxorderamount>
+    </modules>
+    <global>
+        <helpers>
+            <invent_maxorderamount>
+                <class>Invent_Maxorderamount_Helper</class>
+            </invent_maxorderamount>
+        </helpers>
+        <models>
+            <invent_maxorderamount>
+                <class>Invent_Maxorderamount_Model</class>
+            </invent_maxorderamount>
+        </models>
+    </global>
+    <adminhtml>
+        <acl>
+            <resources>
+                <all>
+                    <title>Allow Everything</title>
+                </all>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <invent_maxorderamount>
+                                            <title>Maximum Order Amount</title>
+                                        </invent_maxorderamount>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+    </adminhtml>
+    <frontend>
+        <events>
+            <sales_quote_save_before>
+                <observers>
+                    <invent_maxorderamount>
+                        <class>invent_maxorderamount/observer</class>
+                        <method>checkMaxAmount</method>
+                    </invent_maxorderamount>
+                </observers>
+            </sales_quote_save_before>
+        </events>
+    </frontend>
+    <default>
+        <invent_maxorderamount>
+            <general>
+                <active>0</active>
+                <maximum_amount>500</maximum_amount>
+                <message><![CDATA[No single order allowed with amount over %s.]]></message>
+            </general>
+        </invent_maxorderamount>
+    </default>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Invent_Maxorderamount before="Mage_Adminhtml">Invent_Maxorderamount_Adminhtml</Invent_Maxorderamount>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+</config>
